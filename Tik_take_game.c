@@ -2,64 +2,70 @@
 #include<conio.h>
 
 void printBoard();
-int checkWinner();
+int cheakWiner();
+void system();
 
-char board[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char board[]={'0','1','2','3','4','5','6','7','8','9'};
 
-int main() {
-    int player = 1, Giveplace, status = -1;
+void main(){
+
+   int player=1,Giveplace,staus=-1;
+     printBoard();
+
+     while (staus==-1)
+     {
+      player=(player%2==0)?2:1;
+   char mark=(player==1)?'X':'0';
+   printf("Please Enter the Number of Player  %d\n",player);
+
+  scanf("%d",&Giveplace);
+
+  if(Giveplace<1 || Giveplace>9){
+    printf("Invalid input");
+  }
+
+  board[Giveplace]=mark;
     printBoard();
 
-    while (status == -1) {
-        player = (player % 2 == 0) ? 2 : 1;
-        char mark = (player == 1) ? 'X' : 'O';
-        printf("Please Enter the Number of Player %d\n", player);
+   int result=cheakWiner();
 
-        while (1) {
-            scanf("%d", &Giveplace);
+   if(result==1){
+    printf("Winner is =%d\n",player);
+   }
+   else if(result==0){
+    printf("Draw");
+    return;
+   }
 
-            if (Giveplace < 1 || Giveplace > 9 || board[Giveplace] == 'X' || board[Giveplace] == 'O') {
-                printf("Invalid input. Please enter a valid position: ");
-            } else {
-                break;
-            }
-        }
 
-        board[Giveplace] = mark;
-        printBoard();
 
-        int result = checkWinner();
+    player++;
+     }
+     
 
-        if (result == 1) {
-            printf("Winner is %d\n", player);
-            status = 1;
-        } else if (result == 0) {
-            printf("Draw\n");
-            status = 0;
-        }
 
-        player++;
-    }
 
-    return 0;
+
+  
+        
 }
 
-void printBoard() {
-    system("cls");
+
+void printBoard(){
+  system("cls");
     printf("\n\n");
     printf("**** Tic Tac Toe ****");
     printf("\n\n");
     printf("     |        |     \n");
-    printf(" %c   |   %c    |  %c  \n", board[1], board[2], board[3]);
+    printf(" %c   |   %c    |  %c  \n",board[1],board[2],board[3]);
     printf("_____|________|_____\n");
     printf("     |        |     \n");
-    printf("  %c  |   %c    |  %c  \n", board[4], board[5], board[6]);
+    printf("  %c  |   %c    |  %c  \n",board[4],board[5],board[6]);
     printf("_____|________|_____\n");
     printf("     |        |     \n");
-    printf("  %c  |   %c    |  %c  \n", board[7], board[8], board[9]);
+    printf("  %c  |   %c    |  %c  \n",board[7],board[8],board[9]);
     printf("     |        |      \n");
 }
-
 
 int cheakWiner(){
 
