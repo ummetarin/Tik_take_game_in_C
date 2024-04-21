@@ -6,7 +6,22 @@ void printBoard();
 char board[]={'0','1','2','3','4','5','6','7','8','9'};
 
 void main(){
-  printBoard();
+
+   int player=1,Giveplace;
+     printBoard();
+   char mark=(player==1)?'X':'0';
+
+  scanf("%d",&Giveplace);
+
+  if(Giveplace<1 || Giveplace>9){
+    printf("Invalid input");
+  }
+
+  board[Giveplace]=mark;
+    printBoard();
+
+
+
   
         
 }
