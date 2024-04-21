@@ -22,12 +22,12 @@ void main(){
 
       if(Giveplace<1 || Giveplace>9){
         printf("Invalid input\n");
-        continue; // Restart the loop if input is invalid
+        continue; 
       }
 
       if(board[Giveplace] == 'X' || board[Giveplace] == 'O'){
         printf("This place is already filled. Please choose another.\n");
-        continue; // Restart the loop if the place is already filled
+        continue; 
       }
 
       board[Giveplace]=mark;
@@ -37,7 +37,7 @@ void main(){
 
       if(result==1){
         printf("Winner is = %d\n",player);
-        staus = 1; // Set staus to stop the loop
+        staus = 1;
       }
       else if(result==0){
         printf("Draw\n");
