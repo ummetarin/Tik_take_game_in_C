@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
+
+void printBoard();
 void main(){
   printBoard();
   
@@ -8,7 +10,10 @@ void main(){
 
 
 void printBoard(){
-    printf("     |        |     \n");
+    printf("\n\n");
+    printf("**** Tic Tac Toe ****");
+    printf("\n\n");
+    printf("     |        |     \n")
     printf("  1  |    2   |  3  \n");
     printf("_____|________|_____\n");
     printf("     |        |     \n");
