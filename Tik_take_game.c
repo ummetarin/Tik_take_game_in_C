@@ -1,7 +1,18 @@
 #include<stdio.h>
-int main(){
+#include<conio.h>
+void main(){
+
+    printf("  |  |  \n");
+    printf("  |  |  \n");
+    printf("__|__|__\n");
+    printf("  |  |  \n");
+    printf("  |  |  \n");
+    printf("__|__|__\n");
+    printf("  |  |  \n");
+    printf("  |  |  \n");
+                   
 
 
 
-    
+
 }
