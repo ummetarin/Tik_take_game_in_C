@@ -61,7 +61,7 @@ void printBoard(){
     printf("_____|________|_____\n");
     printf("     |        |     \n");
     printf("  %c  |   %c    |  %c  \n",board[7],board[8],board[9]);
-    printf("     |        |      \n");
+    printf("     |        |      \n\n");
 }
 
 int cheakWiner(){
